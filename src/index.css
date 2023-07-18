@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+}
+.main-container {
+  @apply max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 px-4;
+}
+.primary-bg {
+  @apply bg-[#07332F];
+}
+.heading-color {
+  @apply text-[#F3F3F3];
+}
+.primary-btn-bg {
+  @apply bg-[#F7A582];
+}
+.heading-two {
+  @apply font-bold text-4xl mb-5 text-[#0A0808];
+}
+.section-pera {
+  @apply text-[#3B3A3A];
+}
+.active {
+  @apply bg-transparent border border-white rounded-md px-4 py-1;
+}
+.default {
+  @apply bg-transparent border border-transparent rounded-md px-4 py-1 hover:border-white hover:text-white;
+}
