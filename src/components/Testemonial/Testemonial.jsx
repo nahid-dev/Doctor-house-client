@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 // import required modules
 import { Navigation } from "swiper/modules";
+import { SwiperNavButton } from "../SwiperNavButton/SwiperNavButton";
 
 const reviews = [
   {
@@ -60,7 +61,6 @@ const Testemonial = () => {
         <Swiper
           slidesPerView={2}
           spaceBetween={50}
-          navigation={true}
           loop={true}
           breakpoints={{
             300: {
@@ -85,22 +85,26 @@ const Testemonial = () => {
         >
           {reviews.map((review) => (
             <SwiperSlide key={review.id}>
-              <div className="border p-5 ">
+              <div className="border p-10 rounded-md">
                 <div className="flex justify-between">
-                  <div className="flex items-center">
+                  <div className="flex items-center md:space-x-4 md:mb-4">
                     <img src={review.image.slideImg1} alt="" />
                     <div>
-                      <h6>{review.name}</h6>
-                      <p>{review.review}</p>
+                      <h6 className="font-bold text-xl">{review.name}</h6>
+                      <p className="text-[#6C6B6B]">{review.Designation}</p>
                     </div>
                   </div>
                   <div>
                     <img src={slideImg3} alt="" />
                   </div>
                 </div>
+                <div>
+                  <p className="text-[#6C6B6B]">{review.review}</p>
+                </div>
               </div>
             </SwiperSlide>
           ))}
+          <SwiperNavButton></SwiperNavButton>
         </Swiper>
       </div>
     </>

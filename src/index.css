@@ -31,3 +31,7 @@ body {
 .default {
   @apply bg-transparent border border-transparent rounded-md px-4 py-1 hover:border-white hover:text-white;
 }
+
+.swiper {
+  padding: 0 40px !important;
+}
