@@ -25,6 +25,9 @@ body {
 .section-pera {
   @apply text-[#3B3A3A];
 }
+.card-text-color {
+  @apply text-[#6C6B6B];
+}
 .active {
   @apply bg-transparent border border-white rounded-md px-4 py-1;
 }

@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <>
       <Headroom>
-        <div className="navbar main-container primary-bg text-white">
+        <div className="navbar main-container primary-bg text-white z-50">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
