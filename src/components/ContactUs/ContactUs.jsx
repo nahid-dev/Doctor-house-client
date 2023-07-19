@@ -1,6 +1,7 @@
 import React from "react";
 import { BsTelephoneOutbound } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
+import ButtonBold from "../ButtonBold/ButtonBold";
 
 const ContactUs = () => {
   return (
@@ -42,30 +43,31 @@ const ContactUs = () => {
               />
               <input
                 className="p-5 rounded-lg bg-[#09403b] text-white placeholder-white"
-                type="text"
-                placeholder="Name"
+                type="email"
+                placeholder="Email"
               />
               <input
                 className="p-5 rounded-lg bg-[#09403b] text-white placeholder-white"
                 type="text"
-                placeholder="Name"
+                placeholder="Mobile Number"
               />
               <input
                 className="p-5 rounded-lg bg-[#09403b] text-white placeholder-white"
                 type="text"
-                placeholder="Name"
+                placeholder="Doctor Name"
               />
               <input
                 className="p-5 rounded-lg bg-[#09403b] text-white placeholder-white"
-                type="text"
-                placeholder="Name"
+                type="date"
+                placeholder="Date"
               />
               <input
                 className="p-5 rounded-lg bg-[#09403b] text-white placeholder-white"
-                type="text"
-                placeholder="Name"
+                type="time"
+                placeholder="Time"
               />
             </div>
+            <ButtonBold title={"Book Now"}></ButtonBold>
           </div>
         </div>
       </div>
