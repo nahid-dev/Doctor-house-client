@@ -5,6 +5,7 @@ import HomeInfo from "../../components/homeInfo/HomeInfo";
 import Testemonial from "../../components/Testemonial/Testemonial";
 import ExpertDoctor from "../../components/ExpertDoc/ExpertDoctor";
 import ContactUs from "../../components/ContactUs/ContactUs";
+import Footer from "../../components/Footer/Footer";
 
 const Home = () => {
   return (
@@ -15,6 +16,8 @@ const Home = () => {
       <Testemonial></Testemonial>
       <ExpertDoctor></ExpertDoctor>
       <ContactUs></ContactUs>
+      {/* Footer Section */}
+      <Footer bg={"bg-[#F3F3F3]"}></Footer>
     </>
   );
 };
