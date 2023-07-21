@@ -34,7 +34,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) => (isActive ? "active" : "default")}
-          to="/login"
+          to="/authentication/login"
         >
           Login
         </NavLink>

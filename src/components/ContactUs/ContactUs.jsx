@@ -67,7 +67,7 @@ const ContactUs = () => {
                 placeholder="Time"
               />
             </div>
-            <ButtonBold title={"Book Now"}></ButtonBold>
+            <ButtonBold title={"Book Now"} type={"submit"}></ButtonBold>
           </div>
         </div>
       </div>
