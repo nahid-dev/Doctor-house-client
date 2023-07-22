@@ -1,10 +1,20 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
 import mainLogo from "../../assets/mainLogo.png";
 import "./navbar.css";
 import Headroom from "react-headroom";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   const navItem = (
     <>
       <li>
@@ -31,14 +41,35 @@ const Navbar = () => {
           Appointment
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          className={({ isActive }) => (isActive ? "active" : "default")}
-          to="/authentication/login"
-        >
-          Login
-        </NavLink>
-      </li>
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "default")}
+            to="/dashboard/allUsers"
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
+      {user ? (
+        <li>
+          <Link
+            onClick={handleLogOut}
+            className="bg-white border border-white text-[#07332F] hover:text-black hover:bg-white rounded-md px-4 py-1"
+          >
+            Logout
+          </Link>
+        </li>
+      ) : (
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "default")}
+            to="/authentication/login"
+          >
+            Login
+          </NavLink>
+        </li>
+      )}
     </>
   );
 
