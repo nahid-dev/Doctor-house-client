@@ -1,18 +1,30 @@
 import React, { useContext, useState } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProviders";
 import "./dashboard.css";
 import Hamburger from "hamburger-react";
+import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setOpen] = useState(false);
+  const [isAdmin] = useAdmin();
+  const navigate = useNavigate();
 
+  let path;
+  if (isAdmin) {
+    path = "/dashboard/allUsers";
+  } else {
+    path = "/dashboard/myAppointment";
+  }
   const handleLogOut = () => {
     logOut()
-      .then()
+      .then(() => {
+        navigate("/");
+      })
       .catch((err) => {
         console.log(err.message);
+        navigate("/");
       });
   };
 
@@ -34,7 +46,7 @@ const Dashboard = () => {
         <Link to="contactUs">Contact Us</Link>
       </li>
       <li>
-        <Link to="/dashboard/allUsers">Dashboard</Link>
+        <Link to={path}>Dashboard</Link>
       </li>
       {user && (
         <li>
@@ -50,38 +62,93 @@ const Dashboard = () => {
   );
   const sideBarItem = (
     <>
-      <li className="border">
-        <NavLink
-          className={({ isActive }) => (isActive ? "d-active" : "d-default")}
-          to="/dashboard/allUsers"
-        >
-          All Users
-        </NavLink>
-      </li>
-      <li className="">
-        <NavLink
-          className={({ isActive }) => (isActive ? "d-active" : "d-default")}
-          to="/addADoctor"
-        >
-          Add a Doctor
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) => (isActive ? "d-active" : "d-default")}
-          to="/manageDoctors"
-        >
-          Manage Doctors
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          className={({ isActive }) => (isActive ? "d-active" : "d-default")}
-          to="/"
-        >
-          Home
-        </NavLink>
-      </li>
+      {isAdmin ? (
+        <>
+          <li className="border">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "d-active" : "d-default"
+              }
+              to="/dashboard/allUsers"
+            >
+              All Users
+            </NavLink>
+          </li>
+          <li className="">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "d-active" : "d-default"
+              }
+              to="/addADoctor"
+            >
+              Add a Doctor
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "d-active" : "d-default"
+              }
+              to="/manageDoctors"
+            >
+              Manage Doctors
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "d-active" : "d-default"
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+        </>
+      ) : (
+        <>
+          <li className="border">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "d-active" : "d-default"
+              }
+              to="/dashboard/myAppointment"
+            >
+              My Appointment
+            </NavLink>
+          </li>
+          <li className="">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "d-active" : "d-default"
+              }
+              to="/myReview"
+            >
+              My Review
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "d-active" : "d-default"
+              }
+              to="/myHistory"
+            >
+              My History
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "d-active" : "d-default"
+              }
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (

@@ -1,8 +1,26 @@
 import React from "react";
 import useUsers from "../../Hooks/useUsers";
+import Swal from "sweetalert2";
 
 const AllUsers = () => {
   const [allUsers, refetch, usersLoading] = useUsers();
+
+  // Handle Admin
+  const handleAdmin = (user) => {
+    fetch(`http://localhost:5000/admin/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        refetch();
+        if (data.modifiedCount) {
+          Swal.fire({
+            icon: "success",
+            title: `${user.name} is admin now`,
+          });
+        }
+      });
+  };
   return (
     <div>
       <h3 className="text-3xl font-bold">All Users: {allUsers.length} </h3>
@@ -25,10 +43,19 @@ const AllUsers = () => {
                   <th>{index + 1}</th>
                   <td>{user.email}</td>
                   <td>{user.role}</td>
-                  <td className="text-center space-x-3">
-                    <span>
-                      <button className="roleButton">Make Admin</button>
-                    </span>
+                  <td className="text-right space-x-3">
+                    {user.role === "admin" ? (
+                      ""
+                    ) : (
+                      <span>
+                        <button
+                          onClick={() => handleAdmin(user)}
+                          className="roleButton"
+                        >
+                          Make Admin
+                        </button>
+                      </span>
+                    )}
                     <span>
                       <button className="roleButton">Remove User</button>
                     </span>

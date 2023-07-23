@@ -4,9 +4,18 @@ import mainLogo from "../../assets/mainLogo.png";
 import "./navbar.css";
 import Headroom from "react-headroom";
 import { AuthContext } from "../../Providers/AuthProviders";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isAdmin] = useAdmin();
+
+  let path;
+  if (isAdmin) {
+    path = "/dashboard/allUsers";
+  } else {
+    path = "/dashboard/myAppointment";
+  }
 
   const handleLogOut = () => {
     logOut()
@@ -45,7 +54,7 @@ const Navbar = () => {
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "default")}
-            to="/dashboard/allUsers"
+            to={path}
           >
             Dashboard
           </NavLink>
