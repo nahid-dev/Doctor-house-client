@@ -9,6 +9,7 @@ import AllUsers from "../Pages/allUsers/AllUsers";
 import PrivetRoute from "./PrivetRoute";
 import MyAppointment from "../Pages/myAppointment/MyAppointment";
 import AddADoctor from "../Pages/addADoctor/AddADoctor";
+import DoctorProfile from "../Pages/doctorProfile/DoctorProfile";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+
+      {
+        path: "/home/doctorProfile/:id",
+        element: <DoctorProfile></DoctorProfile>,
       },
     ],
   },

@@ -8,6 +8,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../loader/Loader";
+import { Link } from "react-router-dom";
 
 // Doctor's Data
 // const Doctors = [
@@ -69,7 +70,7 @@ const ExpertDoctor = () => {
       <div className="main-container my-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
           {doctors.map((doctor) => (
-            <div key={doctor.id} className="border p-5 rounded-lg">
+            <div key={doctor._id} className="border p-5 rounded-lg">
               <div className="mb-5">
                 <img className="w-full" src={doctor.image} alt="" />
               </div>
@@ -109,9 +110,12 @@ const ExpertDoctor = () => {
                 <span className="card-text-color">$ 15</span>
               </div>
               <div className="mt-2">
-                <button className="btn btn-block border bg-transparent text-[#F7A582] rounded-lg hover:bg-[#F7A582] hover:text-white transition duration-500">
+                <Link
+                  to={`/home/doctorProfile/${doctor._id}`}
+                  className="btn btn-block border bg-transparent text-[#F7A582] rounded-lg hover:bg-[#F7A582] hover:text-white transition duration-500"
+                >
                   View Profile
-                </button>
+                </Link>
               </div>
             </div>
           ))}

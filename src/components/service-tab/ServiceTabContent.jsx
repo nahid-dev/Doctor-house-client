@@ -1,7 +1,7 @@
 import React from "react";
 
 const ServiceTabContent = ({ post }) => {
-  console.log(post.image);
+  // console.log(post.image);
   return (
     <div>
       <img src={post?.image?.tabImage1} alt="" />
