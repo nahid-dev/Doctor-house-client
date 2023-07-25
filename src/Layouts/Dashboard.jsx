@@ -5,6 +5,8 @@ import "./dashboard.css";
 import Hamburger from "hamburger-react";
 import useAdmin from "../Hooks/useAdmin";
 
+import { FaAngleDown } from "react-icons/fa";
+
 const Dashboard = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setOpen] = useState(false);
@@ -79,7 +81,7 @@ const Dashboard = () => {
               className={({ isActive }) =>
                 isActive ? "d-active" : "d-default"
               }
-              to="/addADoctor"
+              to="/dashboard/addADoctor"
             >
               Add a Doctor
             </NavLink>
@@ -188,11 +190,24 @@ const Dashboard = () => {
       <div className="">
         <div className="grid grid-cols-12">
           <aside className="col-span-12 md:col-span-3">
-            <div>
+            <div className="hidden md:block">
               <ul className="space-y-1">{sideBarItem}</ul>
             </div>
+            <div className="md:hidden">
+              <div className="dropdown">
+                <label tabIndex={0} className="btn m-1">
+                  Others <FaAngleDown></FaAngleDown>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                >
+                  {sideBarItem}
+                </ul>
+              </div>
+            </div>
           </aside>
-          <div className="col-span-10 md:col-span-9 bg-[#F1F5F9] p-10">
+          <div className="col-span-12 md:col-span-9 bg-[#F1F5F9] p-10">
             <Outlet></Outlet>
           </div>
         </div>

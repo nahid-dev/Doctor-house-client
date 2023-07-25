@@ -1,6 +1,6 @@
 .d-active {
-  @apply bg-[#F1F5F9] px-10 w-full block py-5 font-bold text-[#383838] text-xl;
+  @apply bg-[#F1F5F9] px-5 md:px-10 w-full block py-2 md:py-5 font-bold text-[#383838] text-base md:text-xl;
 }
 .d-default {
-  @apply hover:bg-[#F1F5F9] px-10 w-full block py-5 font-bold hover:text-[#341414] text-[#898989] text-xl transition-all duration-200;
+  @apply hover:bg-[#F1F5F9] px-5 md:px-10 w-full block py-2 md:py-5 font-bold hover:text-[#341414] text-[#898989] text-base md:text-xl transition-all duration-200;
 }

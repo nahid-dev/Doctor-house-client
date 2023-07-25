@@ -1,9 +1,14 @@
 import React from "react";
 import useUsers from "../../Hooks/useUsers";
 import Swal from "sweetalert2";
+import Loader from "../../components/loader/Loader";
 
 const AllUsers = () => {
   const [allUsers, refetch, usersLoading] = useUsers();
+
+  if (usersLoading) {
+    return <Loader></Loader>;
+  }
 
   // Handle Admin
   const handleAdmin = (user) => {

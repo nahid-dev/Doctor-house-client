@@ -8,6 +8,7 @@ import Dashboard from "../Layouts/Dashboard";
 import AllUsers from "../Pages/allUsers/AllUsers";
 import PrivetRoute from "./PrivetRoute";
 import MyAppointment from "../Pages/myAppointment/MyAppointment";
+import AddADoctor from "../Pages/addADoctor/AddADoctor";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/myAppointment",
         element: <MyAppointment></MyAppointment>,
+      },
+      {
+        path: "/dashboard/addADoctor",
+        element: <AddADoctor></AddADoctor>,
       },
     ],
   },
