@@ -1,0 +1,6 @@
+.activeTab {
+  @apply text-white  bg-[#F7A582] md:py-[18px] font-bold text-xl inline-block w-full;
+}
+.defaultTab {
+  @apply text-[#6C6B6B] font-bold text-xl  inline-block  w-full text-center md:py-[18px];
+}

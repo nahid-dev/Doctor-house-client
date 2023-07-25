@@ -178,7 +178,7 @@ const AddADoctor = () => {
             {/* Date */}
             <div className="flex flex-col">
               <label htmlFor="dateInput" className="mb-2 font-semibold text-sm">
-                Rating
+                Date :
               </label>
               <DatePicker
                 id="dateInput"
@@ -187,10 +187,8 @@ const AddADoctor = () => {
                 dateFormat="EEE, d MMMM"
                 showYearDropdown={false}
                 placeholderText="Select a date"
+                className="border text-[#9E9C9C] text-[14px] rounded-md md:px-5 px-3 py-1 md:py-3 w-full"
               />
-              {errors.date && (
-                <span className="text-red-600">Rating is required</span>
-              )}
             </div>
 
             {/* IMAGE */}
