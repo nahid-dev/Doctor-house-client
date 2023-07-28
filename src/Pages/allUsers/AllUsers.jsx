@@ -26,6 +26,20 @@ const AllUsers = () => {
         }
       });
   };
+  // handle delete User
+  const handleDeleteUser = (id) => {
+    // console.log(id);
+    fetch(`http://localhost:5000/user/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        refetch();
+        if (data.deletedCount > 0) {
+          Swal.fire("User is Remove successfully");
+        }
+      });
+  };
   return (
     <div>
       <h3 className="text-3xl font-bold">All Users: {allUsers.length} </h3>
@@ -62,7 +76,12 @@ const AllUsers = () => {
                       </span>
                     )}
                     <span>
-                      <button className="roleButton">Remove User</button>
+                      <button
+                        onClick={() => handleDeleteUser(user._id)}
+                        className="roleButton"
+                      >
+                        Remove User
+                      </button>
                     </span>
                   </td>
                 </tr>

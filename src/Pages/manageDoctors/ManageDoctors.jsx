@@ -48,7 +48,7 @@ const ManageDoctors = () => {
                     <th>{index + 1}</th>
                     <td>
                       <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
+                        <div className="mask mask-circle w-12 h-12">
                           <img src={doctor.image} alt="Doctor Image" />
                         </div>
                       </div>
