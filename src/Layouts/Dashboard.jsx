@@ -91,7 +91,7 @@ const Dashboard = () => {
               className={({ isActive }) =>
                 isActive ? "d-active" : "d-default"
               }
-              to="/manageDoctors"
+              to="/dashboard/manageDoctors"
             >
               Manage Doctors
             </NavLink>

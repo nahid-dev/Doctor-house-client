@@ -10,6 +10,7 @@ import PrivetRoute from "./PrivetRoute";
 import MyAppointment from "../Pages/myAppointment/MyAppointment";
 import AddADoctor from "../Pages/addADoctor/AddADoctor";
 import DoctorProfile from "../Pages/doctorProfile/DoctorProfile";
+import ManageDoctors from "../Pages/manageDoctors/ManageDoctors";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/addADoctor",
         element: <AddADoctor></AddADoctor>,
+      },
+      {
+        path: "/dashboard/manageDoctors",
+        element: <ManageDoctors></ManageDoctors>,
       },
     ],
   },
