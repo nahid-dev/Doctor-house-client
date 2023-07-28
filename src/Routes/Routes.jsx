@@ -11,6 +11,7 @@ import MyAppointment from "../Pages/myAppointment/MyAppointment";
 import AddADoctor from "../Pages/addADoctor/AddADoctor";
 import DoctorProfile from "../Pages/doctorProfile/DoctorProfile";
 import ManageDoctors from "../Pages/manageDoctors/ManageDoctors";
+import Appointment from "../Pages/appointment/Appointment";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/home/doctorProfile/:id",
         element: <DoctorProfile></DoctorProfile>,
+      },
+      {
+        path: "/appointment",
+        element: <Appointment></Appointment>,
       },
     ],
   },

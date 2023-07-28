@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import mainLogo from "../../assets/mainLogo.png";
 import "./navbar.css";
 import Headroom from "react-headroom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import useAdmin from "../../Hooks/useAdmin";
+import Hamburger from "hamburger-react";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [isOpen, setOpen] = useState(false);
   const [isAdmin] = useAdmin();
 
   let path;
@@ -54,6 +56,26 @@ const Navbar = () => {
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "default")}
+            to="/review"
+          >
+            Review
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "default")}
+            to="contactUs"
+          >
+            Contact Us
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "default")}
             to={path}
           >
             Dashboard
@@ -85,7 +107,7 @@ const Navbar = () => {
   return (
     <>
       <Headroom>
-        <div className="navbar main-container primary-bg text-white z-50">
+        {/* <div className="navbar main-container primary-bg text-white z-50">
           <div className="navbar-start">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -119,6 +141,39 @@ const Navbar = () => {
               {navItem}
             </ul>
           </div>
+        </div> */}
+        <div className="primary-bg">
+          {/* NavBar */}
+          <nav className=" flex items-center main-container text-white justify-between py-5">
+            <div>
+              <Link className="text-xl font-light uppercase">
+                <img src={mainLogo} alt="" />
+              </Link>
+            </div>
+            <div>
+              <ul className="md:flex items-center md:space-x-5 hidden">
+                {navItem}
+              </ul>
+              <div className="md:hidden">
+                <span
+                  onClick={() => {
+                    setOpen(!isOpen);
+                  }}
+                >
+                  <Hamburger toggled={isOpen} toggle={setOpen} />
+                </span>
+                <div>
+                  <ul
+                    className={`absolute primary-bg top-[102px]  w-2/3  px-5 py-5 text-center space-y-5  h-screen transition-all duration-300 ${
+                      isOpen ? "left-0" : "-left-[527px]"
+                    }`}
+                  >
+                    {navItem}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
         </div>
       </Headroom>
     </>

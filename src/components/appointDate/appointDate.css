@@ -1,0 +1,14 @@
+.section-bg {
+  background-image: url("../../assets/appointmentImage/landing-bg.png");
+  background-position: center center;
+  background-size: cover;
+}
+.rdp-months {
+  justify-content: center;
+}
+.rdp-caption_start {
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 3px 4px 10px 2px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+}
