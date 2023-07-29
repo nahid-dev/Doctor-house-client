@@ -5,6 +5,7 @@
 }
 .rdp-months {
   justify-content: center;
+  align-items: center;
 }
 .rdp-caption_start {
   border-radius: 18px;
