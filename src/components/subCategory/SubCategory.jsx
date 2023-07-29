@@ -8,30 +8,35 @@ const services = [
     name: "Teeth Orthodontics",
     image: "https://i.ibb.co/yYTXJsj/sub-Cat-1.png",
     time: "8:00 AM - 9:00 AM",
+    fee: 200,
   },
   {
     id: 2,
     name: "Cosmetic Dentistry",
     image: "https://i.ibb.co/NNMqytS/sub-Cat-2.png",
     time: "10.05 AM - 11:30 AM",
+    fee: 144,
   },
   {
     id: 3,
     name: "Teeth Cleaning",
     image: "https://i.ibb.co/N9rHJzt/sub-Cat-3.png",
     time: "8:00 AM - 9:00 AM",
+    fee: 250,
   },
   {
     id: 4,
     name: "Teeth Orthodontics",
     image: "https://i.ibb.co/F3kV9bm/sub-Cat-4.png",
     time: "8:00 AM - 9:00 AM",
+    fee: 150,
   },
   {
     id: 5,
     name: "Teeth Orthodontics",
     image: "https://i.ibb.co/HFrN5xZ/sub-Cat-5.png",
     time: "10.05 AM - 11:30 AM",
+    fee: 333,
   },
 ];
 

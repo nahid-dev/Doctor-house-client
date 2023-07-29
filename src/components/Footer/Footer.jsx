@@ -1,5 +1,6 @@
 import React from "react";
 import footerLogo from "../../assets/footerLogo/footerLogo.png";
+import { Link } from "react-router-dom";
 
 const Footer = ({ bg }) => {
   return (
@@ -16,9 +17,12 @@ const Footer = ({ bg }) => {
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. has been since the printer took.
               </p>
-              <button className="btn border border-[#F7A582] bg-transparent text-[#F7A582] rounded-lg hover:bg-[#F7A582] hover:text-white transition duration-500">
+              <Link
+                to="/appointment"
+                className="btn border border-[#F7A582] bg-transparent text-[#F7A582] rounded-lg hover:bg-[#F7A582] hover:text-white transition duration-500"
+              >
                 Appointment
-              </button>
+              </Link>
             </div>
           </div>
           {/* Column 02 */}

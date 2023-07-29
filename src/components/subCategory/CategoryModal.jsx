@@ -34,6 +34,9 @@ export default function CategoryModal({ service, date }) {
         name: data.name,
         phone_number: data.number,
         email: data.email,
+        fee: service.fee,
+        user_email: user?.email,
+        treatment: service.name,
       };
       fetch("http://localhost:5000/appointment", {
         method: "POST",
