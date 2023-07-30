@@ -48,7 +48,7 @@ const ExpertDoctor = () => {
   const { data: doctors = [], isLoading: doctorsLoading } = useQuery({
     queryKey: ["doctors"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/doctors");
+      const res = await fetch("https://server-nahid-dev.vercel.app/doctors");
       return res.json();
     },
   });

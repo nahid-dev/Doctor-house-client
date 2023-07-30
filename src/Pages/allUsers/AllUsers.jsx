@@ -12,7 +12,7 @@ const AllUsers = () => {
 
   // Handle Admin
   const handleAdmin = (user) => {
-    fetch(`http://localhost:5000/admin/${user._id}`, {
+    fetch(`https://server-nahid-dev.vercel.app/admin/${user._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -29,7 +29,7 @@ const AllUsers = () => {
   // handle delete User
   const handleDeleteUser = (id) => {
     // console.log(id);
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://server-nahid-dev.vercel.app/user/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

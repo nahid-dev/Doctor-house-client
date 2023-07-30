@@ -7,7 +7,7 @@ const ManageDoctors = () => {
   const [allDoctors, refetch, doctorsLoading] = useDoctor();
 
   const handleDelete = (doc) => {
-    fetch(`http://localhost:5000/doctor/${doc._id}`, {
+    fetch(`https://server-nahid-dev.vercel.app/doctor/${doc._id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

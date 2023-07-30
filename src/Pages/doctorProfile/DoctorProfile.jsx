@@ -13,7 +13,9 @@ const DoctorProfile = () => {
   const { data: doctorProfile = [], isLoading: profileLoading } = useQuery({
     queryKey: ["doctorProfile"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/doctor/${id}`);
+      const res = await fetch(
+        `https://server-nahid-dev.vercel.app/doctor/${id}`
+      );
       return res.json();
     },
   });

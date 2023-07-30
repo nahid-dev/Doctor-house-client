@@ -38,7 +38,7 @@ export default function CategoryModal({ service, date }) {
         user_email: user?.email,
         treatment: service.name,
       };
-      fetch("http://localhost:5000/appointment", {
+      fetch("https://server-nahid-dev.vercel.app/appointment", {
         method: "POST",
         headers: {
           "content-type": "application/json",
