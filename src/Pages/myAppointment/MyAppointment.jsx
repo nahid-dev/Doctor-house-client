@@ -1,6 +1,7 @@
 import React from "react";
 import useAppointment from "../../Hooks/useAppointment";
 import Loader from "../../components/loader/Loader";
+import PaymentModal from "./PaymentModal";
 
 const MyAppointment = () => {
   const [appointments, , appointmentLoading] = useAppointment();
@@ -32,9 +33,11 @@ const MyAppointment = () => {
                 <td>{appointment.time}</td>
                 <td className="text-center">{appointment?.treatment}</td>
                 <td className="text-center space-x-3 ">
-                  <button className="py-2 px-4 text-white rounded-md bg-[#07332F]">
-                    Pay
-                  </button>
+                  {appointment.status === "paid" ? (
+                    <span className="text-[#F7A582]">{appointment.status}</span>
+                  ) : (
+                    <PaymentModal appointment={appointment}></PaymentModal>
+                  )}
                 </td>
               </tr>
             ))}
