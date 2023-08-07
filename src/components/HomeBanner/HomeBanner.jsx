@@ -13,15 +13,18 @@ const HomeBanner = () => {
         <div>
           <div className="grid grid-cols-1 md:grid-cols-12">
             <div className="flex items-center col-span-7">
-              <div>
-                <h1 className="heading-color text-7xl font-semibold">
+              <div className="text-center md:text-left">
+                <h1 className="heading-color text-[30px] md:text-7xl font-semibold text-center md:text-left">
                   Your Best Medical Help Center
                 </h1>
                 <p className="heading-color font-semibold mb-5">
                   Lorem Ipsum is simply dummy text they are printing typesetting
                   has been the industry’s stardard.
                 </p>
-                <MainButton title={"All Service"}></MainButton>
+                <MainButton
+                  path={"/appointment"}
+                  title={"All Service"}
+                ></MainButton>
               </div>
             </div>
             <div className="col-span-5">

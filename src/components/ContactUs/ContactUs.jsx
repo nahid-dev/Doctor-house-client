@@ -6,14 +6,14 @@ import ButtonBold from "../ButtonBold/ButtonBold";
 const ContactUs = () => {
   return (
     <div className="main-container my-10">
-      <div className="primary-bg p-24 rounded-lg">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="col-span-12 lg:col-span-5">
+      <div className="primary-bg p-5 md:p-24 rounded-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-10">
+          <div className="lg:col-span-5">
             <div>
-              <h2 className="font-bold text-white text-4xl mb-3">
+              <h2 className="font-bold text-white text-[30px] md:text-4xl mb-3 text-center md:text-left">
                 Contact With Us
               </h2>
-              <p className="text-white leading-7">
+              <p className="text-white md:leading-7 text-center md:text-left">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                 accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
                 quae ab illo inve ntore veritatis et quasi.
@@ -25,7 +25,7 @@ const ContactUs = () => {
                   </span>
                   <span>+88 01750 14 14 14</span>
                 </div>
-                <div className="flex items-center text-white mt-5">
+                <div className="flex items-center text-white mt-5 mb-5 md:mb-0">
                   <span className="mr-5">
                     <MdLocationOn size={32}></MdLocationOn>
                   </span>
@@ -34,8 +34,8 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-12 lg:col-span-7">
-            <div className="grid grid-cols-2 gap-5">
+          <div className=" lg:col-span-7">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <input
                 className="p-5 rounded-lg bg-[#09403b] text-white placeholder-white"
                 type="text"

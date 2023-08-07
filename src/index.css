@@ -42,3 +42,9 @@ body {
 .swiper {
   padding: 0 40px !important;
 }
+
+@media only screen and (max-width: 600px) {
+  .swiper {
+    padding: 0 0px !important;
+  }
+}

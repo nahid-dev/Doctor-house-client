@@ -1,10 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const MainButton = ({ title }) => {
+const MainButton = ({ title, path }) => {
   return (
-    <button className="primary-btn-bg text-white font-bold text-xl px-7 py-4 rounded-lg">
+    <Link
+      to={path}
+      className="primary-btn-bg text-white font-bold text-xl px-5 py-3 md:px-7 md:py-4 rounded-lg"
+    >
       {title}
-    </button>
+    </Link>
   );
 };
 

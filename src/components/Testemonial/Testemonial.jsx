@@ -86,15 +86,19 @@ const Testemonial = () => {
           {reviews.map((review) => (
             <SwiperSlide key={review.id}>
               <div className="border p-10 rounded-md">
-                <div className="flex justify-between">
+                <div className="flex justify-between mb-5 md:mb-0">
                   <div className="flex items-center md:space-x-4 md:mb-4">
-                    <img src={review.image.slideImg1} alt="" />
+                    <img
+                      className="mr-5 md:mr-0"
+                      src={review.image.slideImg1}
+                      alt=""
+                    />
                     <div>
                       <h6 className="font-bold text-xl">{review.name}</h6>
                       <p className="text-[#6C6B6B]">{review.Designation}</p>
                     </div>
                   </div>
-                  <div>
+                  <div className="hidden md:block">
                     <img src={slideImg3} alt="" />
                   </div>
                 </div>
