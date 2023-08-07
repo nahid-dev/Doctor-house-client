@@ -12,6 +12,9 @@ import AddADoctor from "../Pages/addADoctor/AddADoctor";
 import DoctorProfile from "../Pages/doctorProfile/DoctorProfile";
 import ManageDoctors from "../Pages/manageDoctors/ManageDoctors";
 import Appointment from "../Pages/appointment/Appointment";
+import About from "../Pages/about/About";
+import Review from "../Pages/review/Review";
+import ContactUs from "../Pages/contactUs/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,18 @@ const router = createBrowserRouter([
       {
         path: "/appointment",
         element: <Appointment></Appointment>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/review",
+        element: <Review></Review>,
+      },
+      {
+        path: "/contactUs",
+        element: <ContactUs></ContactUs>,
       },
     ],
   },
