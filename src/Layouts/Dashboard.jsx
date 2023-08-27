@@ -124,7 +124,7 @@ const Dashboard = () => {
               className={({ isActive }) =>
                 isActive ? "d-active" : "d-default"
               }
-              to="/myReview"
+              to="/dashboard/myReview"
             >
               My Review
             </NavLink>
@@ -134,7 +134,7 @@ const Dashboard = () => {
               className={({ isActive }) =>
                 isActive ? "d-active" : "d-default"
               }
-              to="/myHistory"
+              to="/dashboard/myHistory"
             >
               My History
             </NavLink>

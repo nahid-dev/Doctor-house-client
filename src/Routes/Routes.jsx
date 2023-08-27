@@ -15,6 +15,8 @@ import Appointment from "../Pages/appointment/Appointment";
 import About from "../Pages/about/About";
 import Review from "../Pages/review/Review";
 import ContactUs from "../Pages/contactUs/ContactUs";
+import MyReview from "../Pages/myReview/MyReview";
+import MyHistory from "../Pages/myHistory/MyHistory";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +79,14 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/myAppointment",
         element: <MyAppointment></MyAppointment>,
+      },
+      {
+        path: "/dashboard/myReview",
+        element: <MyReview></MyReview>,
+      },
+      {
+        path: "/dashboard/myHistory",
+        element: <MyHistory></MyHistory>,
       },
       {
         path: "/dashboard/addADoctor",
