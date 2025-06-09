@@ -29,10 +29,10 @@ body {
   @apply text-[#6C6B6B];
 }
 .active {
-  @apply bg-transparent border border-white rounded-md px-4 py-1;
+  @apply bg-[#F7A582] rounded px-5 py-2;
 }
 .default {
-  @apply bg-transparent border border-transparent rounded-md px-4 py-1 hover:border-white hover:text-white;
+  @apply bg-transparent rounded hover:bg-[#F7A582] hover:text-white px-5 py-2;
 }
 
 .roleButton {

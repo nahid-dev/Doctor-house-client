@@ -9,7 +9,7 @@ import MainButton from "../button/MainButton";
 const HomeBanner = () => {
   return (
     <>
-      <div className="primary-bg h-[800px] flex items-center main-container relative">
+      <div className="primary-bg h-[800px] flex items-center main-container relative -top-[102px]">
         <div>
           <div className="grid grid-cols-1 md:grid-cols-12">
             <div className="flex items-center col-span-7">

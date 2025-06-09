@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import mainLogo from "../../assets/mainLogo.png";
 import "./navbar.css";
@@ -11,6 +11,7 @@ const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setOpen] = useState(false);
   const [isAdmin] = useAdmin();
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   let path;
   if (isAdmin) {
@@ -18,6 +19,28 @@ const Navbar = () => {
   } else {
     path = "/dashboard/myAppointment";
   }
+
+  useEffect(() => {
+    // Check initial scroll position
+    if (window.scrollY > 0) {
+      setHasScrolled(true);
+    }
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setHasScrolled(scrollPosition > 0);
+    };
+
+    // Add event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  console.log(hasScrolled);
 
   const handleLogOut = () => {
     logOut()
@@ -105,46 +128,11 @@ const Navbar = () => {
   );
 
   return (
-    <>
+    <div>
       <Headroom>
-        {/* <div className="navbar main-container primary-bg text-white z-50">
-          <div className="navbar-start">
-            <div className="dropdown">
-              <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </label>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 items-center"
-              >
-                {navItem}
-              </ul>
-            </div>
-            <img src={mainLogo} alt="" />
-          </div>
-          <div className="navbar-center hidden lg:flex"></div>
-          <div className="navbar-end">
-            <ul className="menu menu-horizontal px-1 items-center space-x-3">
-              {navItem}
-            </ul>
-          </div>
-        </div> */}
-        <div className="primary-bg">
-          {/* NavBar */}
-          <nav className=" flex items-center main-container text-white justify-between py-5">
+        {/* NavBar */}
+        <div className={`${hasScrolled ? "primary-bg" : "bg-transparent"}`}>
+          <nav className="flex items-center main-container text-white justify-between py-5">
             <div>
               <Link className="text-xl font-light uppercase">
                 <img src={mainLogo} alt="" />
@@ -176,7 +164,7 @@ const Navbar = () => {
           </nav>
         </div>
       </Headroom>
-    </>
+    </div>
   );
 };
 

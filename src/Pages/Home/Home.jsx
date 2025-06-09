@@ -8,14 +8,14 @@ import ContactUs from "../../components/ContactUs/ContactUs";
 
 const Home = () => {
   return (
-    <>
+    <div>
       <HomeBanner></HomeBanner>
       <Services></Services>
       <HomeInfo></HomeInfo>
       <Testemonial></Testemonial>
       <ExpertDoctor></ExpertDoctor>
       <ContactUs></ContactUs>
-    </>
+    </div>
   );
 };
 
