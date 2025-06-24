@@ -7,7 +7,6 @@ import { PiCurrencyCircleDollarLight } from "react-icons/pi";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { useQuery } from "@tanstack/react-query";
-import Loader from "../loader/Loader";
 import { Link } from "react-router-dom";
 
 // Doctor's Data
@@ -45,17 +44,13 @@ import { Link } from "react-router-dom";
 // ];
 
 const ExpertDoctor = () => {
-  const { data: doctors = [], isLoading: doctorsLoading } = useQuery({
+  const { data: doctors = [] } = useQuery({
     queryKey: ["doctors"],
     queryFn: async () => {
       const res = await fetch("https://server-nahid-dev.vercel.app/doctors");
       return res.json();
     },
   });
-
-  if (doctorsLoading) {
-    return <Loader></Loader>;
-  }
 
   return (
     <>

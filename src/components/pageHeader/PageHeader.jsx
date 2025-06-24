@@ -5,7 +5,7 @@ import headerImg1 from "../../assets/pageHeaderImg/headerImg-2.png";
 const PageHeader = ({ title, navigation }) => {
   return (
     <>
-      <div className="primary-bg relative md:h-[400px]">
+      <div className="primary-bg relative md:h-[400px] -top-[102px]">
         <div className="absolute bottom-0 left-10">
           <img src={headerImg1} alt="Header_Bg_Img" />
         </div>

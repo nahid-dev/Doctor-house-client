@@ -40,8 +40,6 @@ const Navbar = () => {
     };
   }, []);
 
-  console.log(hasScrolled);
-
   const handleLogOut = () => {
     logOut()
       .then()

@@ -17,7 +17,7 @@ const HomeBanner = () => {
                 <h1 className="heading-color text-[30px] md:text-7xl font-semibold text-center md:text-left">
                   Your Best Medical Help Center
                 </h1>
-                <p className="heading-color font-semibold mb-5">
+                <p className="heading-color font-semibold mb-10">
                   Lorem Ipsum is simply dummy text they are printing typesetting
                   has been the industry’s stardard.
                 </p>
