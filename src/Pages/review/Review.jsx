@@ -1,8 +1,9 @@
 import React from "react";
-import animation from "../../../public/padge_building.json";
+// import animation from "../../../public/padge_building.json";
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 import useAdmin from "../../Hooks/useAdmin";
+import animation from "../../../public/padge_building.json"
 
 const Review = () => {
   const [isAdmin] = useAdmin();

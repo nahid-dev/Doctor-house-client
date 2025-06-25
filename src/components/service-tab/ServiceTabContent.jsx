@@ -3,7 +3,6 @@ import React from "react";
 // import tabImage1 from "../../assets/services_images/service_img_2.png";
 
 const ServiceTabContent = ({ post }) => {
-  // console.log(post.image);
   return (
     <div>
       <img src={post.image} alt="" />
