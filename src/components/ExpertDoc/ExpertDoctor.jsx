@@ -107,7 +107,7 @@ const ExpertDoctor = () => {
               <div className="mt-2">
                 <Link
                   to={`/home/doctorProfile/${doctor._id}`}
-                  className="btn btn-block border bg-transparent text-[#F7A582] rounded-lg hover:bg-[#F7A582] hover:text-white transition duration-500"
+                  className="px-4 py-2 border bg-transparent text-[#F7A582] rounded-md hover:bg-[#F7A582] hover:text-white transition duration-500"
                 >
                   View Profile
                 </Link>

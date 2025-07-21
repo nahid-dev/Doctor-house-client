@@ -7,7 +7,8 @@ const MainButton = ({ title, path }) => {
       to={path}
       className="primary-btn-bg text-white font-bold text-xl px-5 py-3 md:px-7 md:py-4 rounded"
     >
-      {title}
+      <span>{title}</span>
+      <span></span>
     </Link>
   );
 };

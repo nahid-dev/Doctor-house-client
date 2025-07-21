@@ -8,6 +8,8 @@ import useAdmin from "../../Hooks/useAdmin";
 import Hamburger from "hamburger-react";
 
 const Navbar = () => {
+  const pathName = window.location.pathname;
+  const isAboutPage = pathName.includes("/about");
   const { user, logOut } = useContext(AuthContext);
   const [isOpen, setOpen] = useState(false);
   const [isAdmin] = useAdmin();
@@ -129,7 +131,15 @@ const Navbar = () => {
     <div>
       <Headroom>
         {/* NavBar */}
-        <div className={`${hasScrolled ? "primary-bg" : "bg-transparent"}`}>
+        <div
+          className={`${
+            hasScrolled
+              ? "primary-bg"
+              : isAboutPage
+              ? "primary-bg"
+              : "bg-transparent"
+          }`}
+        >
           <nav className="flex items-center main-container text-white justify-between py-5">
             <div>
               <Link className="text-xl font-light uppercase">
